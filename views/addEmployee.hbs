@@ -1,0 +1,125 @@
+			<div class="row">
+				<div class="col-md-12 text-center">
+                    <strong>{{message}}</strong>
+                </div>
+				<main class="col-md-12">
+					<!-- Start your code here -->
+					<form method="post" action="/employees/add">
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>First Name:</label>
+                                        <input type="hidden" name="employeeNum" />
+                                        <input class="form-control" type="text" name="firstName" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name:</label>
+                                        <input class="form-control" type="text" name="lastName" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email:</label>
+                                        <input class="form-control" type="email" name="email" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Social Security Num:</label>
+                                        <input class="form-control" type="text" name="SSN" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Address (Street):</label>
+                                        <input class="form-control" type="text" name="addressStreet" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label >Address (City):</label>
+                                    <input class="form-control" id="addressCity"  type="text" name="addressCity" />
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Address (State):</label>
+                                        <input class="form-control"  type="text" name="addressState" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Address (Zip Code):</label>
+                                        <input class="form-control" type="text" name="addressPostal" />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    
+                        <fieldset>
+                            <legend>Company Information</legend>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Manager:</label>
+                                        <input class="form-control" type="checkbox" name="isManager" />
+                                    </div>
+                                </div>
+                    
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label >Employee's Manager Number:</label>
+                                        <input class="form-control" type="number" name="employeeManagerNum" value="" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Status:</label><br />
+                                        <label class="checkbox-inline">
+                                            <input type="radio" value="Full Time" name="status" /> Full Time
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" value="Part Time" name="status" /> Part Time
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Department</label>
+                                        {{#if departments}}
+                                        <select class="form-control" name="department" id="department" required>
+                                            <option value="">Select Department</option>
+                                            {{#each departments}}
+                                            <option value="{{departmentId}}">{{departmentName}}</option>
+                                            {{/each}}
+                                        </select>
+                                        {{else}}
+                                            <div>No Departments</div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Hire Date</label>
+                                        <input class="form-control datepicker" type="text" name="hireDate" required />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    
+                        <hr />
+                        <button type="submit" class="btn btn-primary float-right "><i class="far fa-save"></i> Add Employee</button>
+                        <a href="/employees" class="btn btn-primary float-right " style="margin-right:10px;"><i class="fas fa-angle-left"></i> Cancel</a>
+                        <br /><br /><br />
+                    </form>					
+					<!-- End your code here  -->					
+				</main>
+			</div>

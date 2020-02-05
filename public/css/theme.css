@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url("hover-min.css");
+@import url("fontawesome.min.css");
+html,body{
+    color:#314755;
+    font-family: 'Comfortaa', cursive;
+    background: url(../img/background.png);
+    background-repeat: repeat;
+}
+.container{
+    background: transparent url(../img/transparent_light.png) repeat;
+    padding-top: 40px;
+}
+nav{
+    background: url(../img/transparent.png) repeat !important;
+    background-color: transparent !important;    
+    border-bottom: 2px solid #822956;
+    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.38);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.38);
+}
+
+h1,h2,h3,h4,h5,h6{
+    color:#7E2451;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    font-weight: bold;
+}
+a{
+    color:#7E2451;
+    text-decoration: none;
+}
+a:hover{
+    color:#7E2451;    
+    text-decoration: none;
+}
+ul.content li {
+    list-style: none;
+    padding: 0 0 7px 30px;
+    background: transparent url(../img/link.png) no-repeat left center;
+}
+
+.bg-light{
+
+}
+.navbar-brand{
+    font-family: "ubuntu";
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Josefin Sans", sans-serif;
+    background: linear-gradient(to right, #96607b 10%, #fff 50%, #7E2451 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1.5s linear infinite;
+    display: inline-block;
+}
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+.navbar-brand:hover { 
+    /*background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;*/
+}
+.nav-item {
+    margin-left:5px;
+}
+.nav-link{
+    color:#fff !important;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+.nav-link:hover{
+    text-shadow:none;
+}
+.navbar-light .navbar-nav .active > .nav-link
+{
+    background: transparent url(../img/transparent.png) repeat;
+    text-shadow:none;
+    color: #fff !important;
+    font-weight: bold;
+}
+.dataTables_filter input {
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-primary{
+    background-image: linear-gradient(to right, #7E2451 0%, rgb(236, 186, 186) 51%, #7E2451 100%);
+    box-shadow: 0 4px 15px 0 #96607b;
+    border-color:#7E2451;
+    background-size: 300% 100%;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.btn-primary:hover { 
+    background-position: 100% 0;
+    border-color:#7E2451;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+table.dataTable tbody tr:nth-child(even){
+    background: url(../img/transparent_light.png) repeat !important;
+}
+legend{
+    color:#7E2451;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    font-weight: bold;
+}
+.btn-light {border:1px solid #495057}
+.hvr-bounce-to-right:before{background:#e9ac29}
+.hvr-bounce-to-left:before{background:#b31313}

@@ -1,0 +1,126 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <strong>{{message}}</strong>
+    </div>
+    <div class="col-md-12">
+        <br>
+        <h2>{{viewData.employee.firstName}} {{viewData.employee.lastName}} - Employee: {{viewData.employee.employeeNum}}</h2>       
+        <hr />
+        <form method="post" action="/employee/update">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="hidden" name="employeeNum" value="{{viewData.employee.employeeNum}}" />
+                            <input class="form-control" id="firstName" name="firstName" type="text"
+                                value="{{viewData.employee.firstName}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input class="form-control" id="lastName" name="lastName" type="text"
+                                value="{{viewData.employee.lastName}}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input class="form-control" type="email" name="email" value="{{viewData.employee.email}}" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Social Security Num:</label>
+                            <input class="form-control" type="text" name="SSN" value="{{viewData.employee.SSN}}" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Address (Street):</label>
+                            <input class="form-control" type="text" name="addressStreet" value="{{viewData.employee.addressStreet}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label >Address (City):</label>
+                        <input class="form-control" id="addressCity"  type="text" name="addressCity" value="{{viewData.employee.addressCity}}" />
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Address (State):</label>
+                            <input class="form-control"  type="text" name="addressState" value="{{viewData.employee.addressState}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Address (Zip Code):</label>
+                            <input class="form-control" type="text" name="addressPostal" value="{{viewData.employee.addressPostal}}" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Company Information</legend>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Manager:</label>
+                            <input class="form-control" type="checkbox" name="isManager" {{#if viewData.employee.isManager}}checked{{/if}} value="true" />
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label >Employee's Manager Number:</label>
+                            <input class="form-control" type="number" name="employeeManagerNum" value="{{viewData.employee.employeeManagerNum}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Status:</label><br />
+                            <label class="checkbox-inline">
+                                <input type="radio" value="Full Time" name="status" {{#equal viewData.employee.status "Full Time"}}checked{{/equal}} /> Full Time
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="radio" value="Part Time" name="status" {{#equal viewData.employee.status "Part Time"}}checked{{/equal}} /> Part Time
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Department</label>
+                            {{#if viewData.departments}}
+                            <select class="form-control" name="department" id="department" required>
+                                <option value="">Select Department</option> 
+                                {{#each viewData.departments}}
+                                <option value="{{departmentId}}" {{#if selected}} selected {{/if}} >{{departmentName}} </option>
+                                {{/each}}
+                            </select>
+                            {{else}}
+                                <div>No Departments</div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Hire Date</label>
+                            <input class="form-control datepicker" type="text" name="hireDate" value="{{viewData.employee.hireDate}}" required />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <hr />            
+            <button type="submit" class="btn btn-primary float-right "><i class="far fa-save"></i> Update Employee</button>
+            <a href="/employees" class="btn btn-primary float-right " style="margin-right:10px;"><i class="fas fa-angle-left"></i> Cancel</a>
+            <br /><br /><br />
+        </form>
+    </div>
+</div>

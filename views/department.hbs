@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <strong>{{message}}</strong>
+    </div>
+    <div class="col-md-12">
+        <br>
+        <h2>{{department.departmentName}} - Department: {{department.departmentId}}</h2>
+        <hr />
+        <form method="post" action="/department/update">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="departmentName">Department Name</label>
+                        <input type="hidden" name="departmentId" value="{{department.departmentId}}">
+                        <input class="form-control" id="departmentName" name="departmentName" type="text" value="{{department.departmentName}}" required />
+                    </div>
+                </div>
+            </div>            
+            <hr />
+            <button type="submit" class="btn btn-primary float-right "><i class="far fa-save"></i> Update Department</button>
+            <a href="/departments" class="btn btn-primary float-right " style="margin-right:10px;"><i class="fas fa-angle-left"></i> Cancel</a>
+            <br><br><br>
+        </form>
+    </div>
+</div>
