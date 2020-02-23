@@ -1,15 +1,3 @@
-/********************************************************************************* 
-* WEB700 – Assignment 6 
-* I declare that this assignment is my own work in accordance with Seneca Academic Policy. 
-* No part of this assignment has been copied manually or electronically from any other source 
-* (including web sites) or distributed to other students. 
-* 
-* Name: PRITHU AHMED        Student ID: 153856174       Date: November 29, 2019  
-* 
-* Online (Heroku) Link: https://web700-asign6.herokuapp.com/
-* 
-********************************************************************************/
-//import Swal from 'sweetalert2'
 var HTTP_PORT = process.env.PORT || 8080;
 const express = require("express");
 const path = require("path");
